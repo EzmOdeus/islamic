@@ -5,19 +5,7 @@ import id from '../app/Data/Data'
 import useWindowSize from '@rooks/use-window-size';
 function Card() {
     const { innerWidth, innerHeight, outerHeight, outerWidth } = useWindowSize();
-    // const [windowSize, setWindowSize] = useState(getWindowSize());
 
-    // useEffect(() => {
-    //     function handleWindowResize() {
-    //         setWindowSize(getWindowSize());
-    //     }
-
-    //     window.addEventListener('resize', handleWindowResize);
-
-    //     return () => {
-    //         window.removeEventListener('resize', handleWindowResize);
-    //     };
-    // }, []);
 console.log(innerWidth);
     const opts = {
         height: innerWidth! > 700 ? '200':'300',
@@ -45,8 +33,4 @@ console.log(innerWidth);
 }
 
 export default Card;
-        
-    // function getWindowSize() {
-    //     const { innerWidth, innerHeight } = window;
-    //     return { innerWidth, innerHeight };
-    // }
+
