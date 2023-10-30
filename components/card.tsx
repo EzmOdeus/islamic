@@ -2,25 +2,26 @@
 import React, { useEffect, useRef, useState } from 'react';
 import YouTube from 'react-youtube';
 import id from '../app/Data/Data'
+import useWindowSize from '@rooks/use-window-size';
 function Card() {
+    const { innerWidth, innerHeight, outerHeight, outerWidth } = useWindowSize();
+    // const [windowSize, setWindowSize] = useState(getWindowSize());
 
-    const [windowSize, setWindowSize] = useState(getWindowSize());
+    // useEffect(() => {
+    //     function handleWindowResize() {
+    //         setWindowSize(getWindowSize());
+    //     }
 
-    useEffect(() => {
-        function handleWindowResize() {
-            setWindowSize(getWindowSize());
-        }
+    //     window.addEventListener('resize', handleWindowResize);
 
-        window.addEventListener('resize', handleWindowResize);
-
-        return () => {
-            window.removeEventListener('resize', handleWindowResize);
-        };
-    }, []);
-console.log(windowSize.innerWidth);
+    //     return () => {
+    //         window.removeEventListener('resize', handleWindowResize);
+    //     };
+    // }, []);
+console.log(innerWidth);
     const opts = {
-        height: windowSize.innerWidth > 700 ? '200':'300',
-        width: windowSize.innerWidth>700?'400': '530',
+        height: innerWidth! > 700 ? '200':'300',
+        width: innerWidth!>700?'400': '530',
     }
    
     return (
@@ -45,7 +46,7 @@ console.log(windowSize.innerWidth);
 
 export default Card;
         
-    function getWindowSize() {
-        const { innerWidth, innerHeight } = window;
-        return { innerWidth, innerHeight };
-    }
+    // function getWindowSize() {
+    //     const { innerWidth, innerHeight } = window;
+    //     return { innerWidth, innerHeight };
+    // }
