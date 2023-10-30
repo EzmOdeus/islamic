@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  background-color: #151515de !important;
+      direction: rtl;
+      
+}
+nav{
+  direction:rtl
+}
+.co{
+  flex: 7 1 0%;
+}
+::-webkit-scrollbar {
+  width: 1px;
+}
